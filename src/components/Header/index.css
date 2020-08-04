@@ -1,0 +1,78 @@
+.headerMenu {
+    line-height: 64px; 
+    font-size: 16px;
+    height: 71px;
+    border-bottom: solid 2px gray;
+    background: transparent;
+    letter-spacing: 2px;
+}
+.subMenu {
+    line-height: 64px; 
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.headerLogo {
+    height: 50px;
+    margin-top: 9px;
+}
+.headerIndex {
+    padding-left: 12.5%;
+    height: 71px;
+    width: 100%;
+    box-shadow: 0px 3px 20px 3px rgba(0,0,0,0.8);
+    border-bottom: solid 2px gray;
+    background: white;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.menuAtag {
+    line-height: 45px!important;
+    color: rgba(0,0,0,0.8)!important;
+    font-family: "Titillium Web", sans-serif !important;
+    font-weight: bolder;
+}
+
+.menuAtag:hover {
+    line-height: 45px!important;
+    color:#D62829!important;
+    font-family: "Titillium Web", sans-serif !important;
+    font-weight: bolder;
+}
+
+@media only screen and (max-device-width : 760px) {
+    .menuAtag {
+        height: 35px!important;
+        line-height: 45px!important;
+        color: rgba(0,0,0,0.8)!important;
+        font-family: "Titillium Web", sans-serif !important;
+        font-weight: bolder;
+    }
+    .headerMenu {
+        border-bottom: solid 2px#D62829;
+        line-height: 47px; 
+        font-size: 12px; 
+        height: 54px;
+    }
+    .headerLogo {
+        height: 35px;
+        margin-left: 5px;
+    }
+    .headerIndex {
+        padding: 0px;
+        height: 70px;
+        width: 100%;
+        box-shadow: 0px 3px 20px 3px rgba(0,0,0,0.8);
+        border-bottom: solid 2px gray;
+        background: white;
+        color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
+    
+}

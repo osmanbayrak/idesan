@@ -1,0 +1,34 @@
+.footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  color: #b2b8c0;
+  padding: 20px 10px 0 10px;
+  height: 75px;
+  background-color: #e8eaed; }
+  @media screen and (max-width: 768px) {
+    .footer .logos {
+      text-align: center; } }
+
+.contentBlock {
+  text-align: center;
+  margin-right: 1%;
+  margin-left: 1%;
+  color: white; }
+  @media only screen and (max-width: 1350px) {
+    .contentBlock {
+      margin-top: 3%;
+      text-align: center;
+      margin-right: 1%;
+      margin-left: 1%;
+      top: 10px; } }
+
+.footerStyles {
+  text-align: center;
+  font-size: 16px;
+  color: #d5d5d5;
+  background-color: #232b2b; }
+
+@media screen and (max-width: 768px) {
+  .responsive-hide {
+    display: none; } }
