@@ -5,6 +5,12 @@
   box-shadow: 0px 3px 20px 3px rgba(0, 0, 0, 0.8);
   border-radius: 10px; }
 
+.contentBlock {
+  background: ghostwhite;
+  padding-top: 10px;
+  padding-bottom: 35px;
+  border-radius: 10px; }
+
 .ant-card {
   font-family: "Titillium Web", sans-serif !important;
   background: white;
@@ -29,25 +35,32 @@
   .ant-card .ant-card-body {
     padding: 10px; }
 
-.productsBannerImg {
-  width: 100%;
-  border-bottom: solid 1px #001f3f;
-  box-shadow: 0px 3px 20px 3px rgba(0, 0, 0, 0.8); }
+.bannerImg {
+  margin-bottom: 15px; }
 
 .titleMiddleDiv {
+  padding-top: 10px;
+  background: ghostwhite;
   font-size: 28px;
-  border-radius: 10px;
-  width: 16.6%; }
+  width: 16.6%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
   @media only screen and (max-width: 1500px) {
     .titleMiddleDiv {
+      padding-top: 10px;
+      background: ghostwhite;
       width: 33.3%;
       font-size: 22px;
-      border-radius: 10px; } }
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px; } }
   @media only screen and (max-width: 760px) {
     .titleMiddleDiv {
+      padding-top: 8px;
+      background: ghostwhite;
       width: 100%;
       font-size: 20px;
-      border-radius: 10px; } }
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px; } }
 
 .bayilerImg {
   margin-top: 10px; }
@@ -57,6 +70,7 @@
       width: 300px; } }
 
 .carouselDiv {
+  margin-top: 72px;
   margin-bottom: 60px;
   z-index: 2; }
   @media only screen and (max-width: 760px) {
@@ -76,25 +90,23 @@
 .aboutText {
   padding: 15px;
   background: ghostwhite;
-  font-size: 18px;
-  margin-top: 15px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
   border-radius: 7px; }
   @media only screen and (max-width: 760px) {
     .aboutText {
       font-size: 14px;
-      margin-top: 8px;
+      color: rgba(0, 0, 0, 0.9);
       padding: 8px;
       border-radius: 7px;
       background: ghostwhite; } }
 
 .titleRow {
-  margin-top: 72px;
   font-size: 30px;
   font-weight: 900;
   text-align: center; }
   @media only screen and (max-width: 760px) {
     .titleRow {
-      margin-top: 75px;
       font-size: 18px;
       font-weight: 900;
       text-align: center; } }
@@ -102,31 +114,34 @@
 .titleRowDivider {
   margin-top: 60px;
   height: 1px;
-  background: rgba(0, 0, 0, 0.4);
   opacity: 0.6;
   width: 41.666%; }
   @media only screen and (max-width: 1500px) {
     .titleRowDivider {
       margin-top: 20px;
       height: 1px;
-      background: rgba(0, 0, 0, 0.4);
       opacity: 0.6;
       width: 33.3%; } }
   @media only screen and (max-width: 700px) {
     .titleRowDivider {
       margin-top: 20px;
       height: 1px;
-      background: transparent;
       width: 33.3%; } }
 
 .rowImages {
-  height: 240px;
+  height: 270px;
   border: 1px solid white;
   border-radius: 3px;
   overflow: hidden; }
+  @media only screen and (max-width: 1500px) {
+    .rowImages {
+      height: 200px;
+      border: 1px solid white;
+      border-radius: 3px;
+      overflow: hidden; } }
   @media only screen and (max-width: 700px) {
     .rowImages {
-      height: 190px;
+      height: 240px;
       border: 1px solid white;
       border-radius: 3px;
       overflow: hidden; } }

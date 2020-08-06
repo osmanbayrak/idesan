@@ -14,7 +14,7 @@ const i18n = {
 const FooterComponent = () => (
   <Footer style={{ textAlign: 'center', backgroundColor: '#333333', padding: '5px 50px 20px' }}>
     <Fragment>
-      <Row className="contentBlock" style={{ color: '#fff' }}>
+      <Row style={{ color: '#fff', marginTop: '20px' }}>
         <Col md={{span: 22, offset: 1}} xs={{span: 24}}>
           <Col md={{span: 6}} xs={24}>5733 Sok. No:39 35380 Karabağlar / İzmir</Col>
           <Col md={{span: 6}} xs={24}>Tel: 0232 237 2341 / 0232 254 9535</Col>
