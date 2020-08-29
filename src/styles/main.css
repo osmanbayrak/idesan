@@ -16,11 +16,96 @@ body {
 .content {
   overflow: hidden; }
 
+.footerClass {
+  text-align: center;
+  background-color: #333333;
+  padding: 20px 50px 20px;
+  font-size: 14px; }
+  @media only screen and (max-width: 700px) {
+    .footerClass {
+      text-align: center;
+      background-color: #333333;
+      padding: 20px 5px 20px;
+      font-size: 12px; } }
+
+.karabaglarDiv {
+  margin-left: 2.08%;
+  text-align: center;
+  background: ghostwhite;
+  border-radius: 8px;
+  padding-top: 15px;
+  padding-bottom: 20px; }
+  @media only screen and (max-width: 700px) {
+    .karabaglarDiv {
+      margin-left: 4.16%;
+      text-align: center;
+      background: ghostwhite;
+      border-radius: 8px;
+      padding-top: 15px;
+      padding-bottom: 10px; } }
+
+.mainSpan {
+  margin-top: 10px;
+  float: right;
+  font-size: 14px; }
+  @media only screen and (max-width: 700px) {
+    .mainSpan {
+      float: right;
+      font-size: 9px;
+      margin-top: -50px; } }
+
+.pClass {
+  margin-bottom: 0;
+  line-height: 17px; }
+  @media only screen and (max-width: 700px) {
+    .pClass {
+      line-height: 12px; } }
+
+.span1 {
+  margin-left: 17px;
+  display: block; }
+  @media only screen and (max-width: 700px) {
+    .span1 {
+      margin-left: 11px;
+      display: block; } }
+
+.span2 {
+  margin-left: 41px;
+  display: block; }
+  @media only screen and (max-width: 700px) {
+    .span2 {
+      margin-left: 26px;
+      display: block; } }
+
+.contactLittleImg {
+  width: auto;
+  height: 180px;
+  margin-bottom: 15px;
+  border: 1px solid darkgray; }
+  @media only screen and (max-width: 700px) {
+    .contactLittleImg {
+      width: auto;
+      height: 120px;
+      margin-bottom: 10px;
+      border: 1px solid darkgray; } }
+
 .pageContent {
   margin: 50px 12px 0 12px; }
   @media only screen and (max-width: 700px) {
     .pageContent {
       margin: 15px 12px 0 12px; } }
+
+.map {
+  width: 90%;
+  height: 400px;
+  margin-left: 5%;
+  border: 1px solid steelblue; }
+  @media only screen and (max-width: 700px) {
+    .map {
+      width: 96%;
+      height: 300px;
+      margin-left: 2%;
+      border: 1px solid steelblue; } }
 
 .recharts-responsive-container {
   min-width: 300px;

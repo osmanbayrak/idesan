@@ -35,52 +35,77 @@ class HeaderComponent extends React.Component {
 
   render() {
     const currentPath = window.location.pathname;
-    const paths = ['/home', '/products/all', '/iletişim'];
+    const paths = [
+      '/home',
+      '/products/borular',
+      '/products/profiller',
+      '/products/haddedemirler',
+      '/products/saclar',
+      '/products/ferforje',
+      '/contact',
+    ];
     if (!paths.includes(currentPath)) {
       return <Redirect to="/home" />;
     }
     return (
       <div>
         <Header style={this.state.opacityOn ? { opacity: '1' } : undefined} className="headerIndex">
-          <Col md={4} xs={6} className="logoDiv">
-            <img className="headerLogo" src={logo} />
-          </Col>
-          <Col md={12} xs={18} className="menuDiv" style={{ background: 'transparent' }}>
-            <Menu
-              mode="horizontal"
-              selectedKeys={[paths.includes(currentPath) ? currentPath : '/home']}
-              className="headerMenu"
-            >
-              <Menu.Item key="/home">
-                <Link to="/home" className="menuAtag">
-                  ANASAYA
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="/products/all">
-                <Link to="/products/all" className="menuAtag">
-                  ÜRÜN PORTFÖYÜ
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="/contact">
-                <Link to="/contact" className="menuAtag">
-                  İLETİŞİM
-                </Link>
-              </Menu.Item>
-            </Menu>
-          </Col>
-          <Col style={{ marginTop: '-10px' }} xs={0} md={8}>
-            <p style={{ height: '5px', marginBottom: '7px' }}>Karabağlar tel: 0232 237 2341</p>
-            <p style={{ height: '5px', marginBottom: '7px' }}>Gaziemir tel : 0532 630 6840 </p>
-            <p style={{ height: '5px', marginBottom: '0px' }}>
-              Email :{' '}
-              <a
+          <Col md={{ span: 20, offset: 2 }}>
+            <Col md={4} xs={6} className="logoDiv">
+              <img
                 onClick={() => {
-                  window.location.href = 'mailto:mail@example.org';
+                  this.props.history.push('/home');
                 }}
+                className="headerLogo"
+                src={logo}
+              />
+            </Col>
+            <Col md={12} xs={18} className="menuDiv" style={{ background: 'transparent' }}>
+              <Menu
+                mode="horizontal"
+                selectedKeys={[paths.includes(currentPath) ? currentPath : '/home']}
+                className="headerMenu"
               >
-                idesan@idesandemir.com
-              </a>
-            </p>
+                <Menu.Item key="/home">
+                  <Link to="/home" className="menuAtag">
+                    ANASAYFA
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="/products/profiller">
+                  <Link to="/products/profiller" className="menuAtag">
+                    ÜRÜN PORTFÖYÜ
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="/contact">
+                  <a
+                    onClick={() => {
+                      window.location = '/contact';
+                    }}
+                    className="menuAtag"
+                  >
+                    İLETİŞİM
+                  </a>
+                </Menu.Item>
+              </Menu>
+            </Col>
+            <span className="mainSpan">
+              <p className="pClass">
+                <span className="span1">
+                  <b>Tel:</b> 0232 237 2341
+                </span>
+                <span className="span2">0232 254 9535</span>
+                <span style={{ display: 'block' }}>
+                  <b>Email:</b>{' '}
+                  <a
+                    onClick={() => {
+                      window.location.href = 'mailto:idesan@idesandemir.com';
+                    }}
+                  >
+                    idesan@idesandemir.com
+                  </a>
+                </span>
+              </p>
+            </span>
           </Col>
         </Header>
       </div>

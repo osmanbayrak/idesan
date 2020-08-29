@@ -8,10 +8,10 @@ const { Content } = Layout;
 
 const GlobalLayout = props => (
   <Layout className="layout" style={{ backgroundImage: `url(${bgImg})` }}>
-    <HeaderComponent />
+    <HeaderComponent history={props.history} />
     <BackTop />
     <Content>{props.children}</Content>
-    <FooterComponent />
+    <FooterComponent history={props.history} />
   </Layout>
 );
 

@@ -48,10 +48,10 @@ axios.interceptors.response.use(
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Root />
+      <Root history={history} />
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('iot'),
+  document.getElementById('idesan'),
 );
 /* istanbul ignore if */
 if (process.env.NODE_ENV === 'development' && module.hot) {

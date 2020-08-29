@@ -37,6 +37,9 @@
 
 .bannerImg {
   margin-bottom: 15px; }
+  @media only screen and (max-width: 480px) {
+    .bannerImg {
+      margin-top: 70px; } }
 
 .titleMiddleDiv {
   padding-top: 10px;
@@ -122,26 +125,26 @@
       height: 1px;
       opacity: 0.6;
       width: 33.3%; } }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 480px) {
     .titleRowDivider {
       margin-top: 20px;
       height: 1px;
       width: 33.3%; } }
 
 .rowImages {
-  height: 270px;
+  height: 10vw;
   border: 1px solid white;
   border-radius: 3px;
   overflow: hidden; }
-  @media only screen and (max-width: 1500px) {
+  @media only screen and (max-width: 768px) {
     .rowImages {
-      height: 200px;
+      height: 27vw;
       border: 1px solid white;
       border-radius: 3px;
       overflow: hidden; } }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 570px) {
     .rowImages {
-      height: 240px;
+      height: 51vw;
       border: 1px solid white;
       border-radius: 3px;
       overflow: hidden; } }

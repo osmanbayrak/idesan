@@ -1,4 +1,5 @@
 import React from 'react';
+import { generatePath } from 'react-router';
 import { Card, Col, Row, Tabs, Divider } from 'antd';
 import headerBg from '../../assets/bannerBgGray.png';
 import productsBannerImg from '../../assets/productBanner.jpg';
@@ -36,6 +37,12 @@ class Products extends React.Component {
       this.setState({ currentCategory: this.props.match.params.category });
     }
   }
+
+  callback = activeKey => {
+    this.props.history.push({
+      pathname: generatePath(this.props.match.path, { category: activeKey }),
+    });
+  };
   render() {
     const { currentCategory } = this.state;
     const products = {
@@ -97,12 +104,12 @@ class Products extends React.Component {
         <div className="bannerImg">
           <img style={{ width: '100%' }} src={productsBannerImg} />
         </div>
-        <Col md={{ span: 22, offset: 1 }} xs={{ span: 24 }}>
-          <Divider style={{ color: 'darkgray', height: '2px' }} plain>
+        <Col md={{ span: 22, offset: 1 }} xs={{ span: 22, offset: 1 }}>
+          <Divider style={{ color: 'darkgray', height: '2px' }}>
             <h1>ÜRÜN PORTFÖYÜ</h1>
           </Divider>
           <Tabs
-            defaultActiveKey={'profiller'}
+            defaultActiveKey={currentCategory ? currentCategory : 'profiller'}
             onChange={this.callback}
             style={{
               textAlign: 'center',
@@ -256,7 +263,7 @@ class Products extends React.Component {
             </Tabs.TabPane>
             <Tabs.TabPane
               tab={<span style={{ fontSize: '16px' }}>HADDE DEMİRLER</span>}
-              key="hadde_demirler"
+              key="haddedemirler"
             >
               <Row style={{ marginTop: '20px' }} gutter={24}>
                 {products.hadde_demirler.cards.map((v, i) => {

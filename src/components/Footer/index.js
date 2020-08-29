@@ -12,33 +12,31 @@ const i18n = {
 };
 
 const FooterComponent = () => (
-  <Footer style={{ textAlign: 'center', backgroundColor: '#333333', padding: '5px 50px 20px' }}>
+  <Footer className="footerClass">
     <Fragment>
       <Row style={{ color: '#fff', marginTop: '20px' }}>
-        <Col md={{ span: 22, offset: 1 }} xs={{ span: 24 }}>
-          <Col md={{ span: 6 }} xs={24}>
-            5733 Sok. No:39 35380 Karabağlar / İzmir
+        <Col md={{ span: 22, offset: 1 }} xs={{ span: 24, offset: 0 }}>
+          <Col md={{ span: 6, offset: 6 }} xs={{ span: 24, offset: 0 }}>
+            <span style={{ display: 'block' }}>5733 Sok. No:39 35380 Karabağlar / İzmir</span>
+            <span style={{ display: 'block' }}>
+              E-mail:{' '}
+              <a
+                onClick={() => {
+                  window.location.href = 'mailto:idesan@idesandemir.com';
+                }}
+              >
+                idesan@idesandemir.com
+              </a>
+            </span>
           </Col>
           <Col md={{ span: 6 }} xs={24}>
-            Tel: 0232 237 2341 / 0232 254 9535
-          </Col>
-          <Col md={{ span: 6 }} xs={24}>
-            Faks: 0232 254 1541{' '}
-          </Col>
-          <Col md={{ span: 6 }} xs={24}>
-            E-mail:{' '}
-            <a
-              onClick={() => {
-                window.location.href = 'mailto:mail@example.org';
-              }}
-            >
-              idesan@idesandemir.com
-            </a>
+            <span style={{ display: 'block' }}>Faks: 0232 254 1541</span>
+            <span style={{ display: 'block' }}>Tel: 0232 237 2341 / 0232 254 9535</span>
           </Col>
         </Col>
       </Row>
       <Divider style={{ margin: '12px 0', background: 'gray' }} />
-      <Col style={{ textAlign: 'center', color: '#fff' }}>
+      <Col style={{ textAlign: 'center', color: '#fff', fontSize: '13px' }}>
         Copyright © 2020 İDESAN Tüm hakları saklıdır.
       </Col>
     </Fragment>

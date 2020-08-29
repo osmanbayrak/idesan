@@ -12,11 +12,17 @@
     letter-spacing: 2px;
 }
 .headerLogo {
+    cursor: pointer;
     height: 50px;
     margin-top: 9px;
 }
+.headerLogo:hover {
+    filter: brightness(120%);
+    height: 52px;
+}
+
 .headerIndex {
-    padding-left: 12.5%;
+    padding: 0;
     height: 71px;
     width: 100%;
     box-shadow: 0px 3px 20px 3px rgba(0,0,0,0.8);
@@ -58,8 +64,13 @@
         height: 54px;
     }
     .headerLogo {
+        cursor: pointer;
         height: 35px;
         margin-left: 5px;
+    }
+    .headerLogo:hover {
+        filter: brightness(120%);
+        height: 36px;
     }
     .headerIndex {
         padding: 0px;

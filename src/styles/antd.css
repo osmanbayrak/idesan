@@ -17026,7 +17026,6 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   content: ' ';
 }
 .ant-menu-submenu > .ant-menu {
-  background-color: rgba(0,0,0,0.73);
   border-radius: 4px;
 }
 .ant-menu-submenu > .ant-menu-submenu-title::after {
