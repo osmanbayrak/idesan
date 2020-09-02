@@ -37,11 +37,12 @@ class HeaderComponent extends React.Component {
     const currentPath = window.location.pathname;
     const paths = [
       '/home',
-      '/products/borular',
-      '/products/profiller',
+      '/products/profiller_borular',
+      '/products/cati',
       '/products/haddedemirler',
       '/products/saclar',
-      '/products/ferforje',
+      '/products/yapimalz',
+      '/products/yardimcilar',
       '/contact',
     ];
     if (!paths.includes(currentPath)) {
@@ -66,13 +67,8 @@ class HeaderComponent extends React.Component {
                 selectedKeys={[paths.includes(currentPath) ? currentPath : '/home']}
                 className="headerMenu"
               >
-                <Menu.Item key="/home">
-                  <Link to="/home" className="menuAtag">
-                    ANASAYFA
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="/products/profiller">
-                  <Link to="/products/profiller" className="menuAtag">
+                <Menu.Item key="/products/profiller_borular">
+                  <Link to="/products/profiller_borular" className="menuAtag">
                     ÜRÜN PORTFÖYÜ
                   </Link>
                 </Menu.Item>
@@ -91,9 +87,11 @@ class HeaderComponent extends React.Component {
             <span className="mainSpan">
               <p className="pClass">
                 <span className="span1">
-                  <b>Tel:</b> 0232 237 2341
+                  <b>Tel:</b> <a href="tel:+902322372341">0232 237 2341</a>
                 </span>
-                <span className="span2">0232 254 9535</span>
+                <span className="span2">
+                  <a href="tel:+902322549535">0232 254 9535</a>
+                </span>
                 <span style={{ display: 'block' }}>
                   <b>Email:</b>{' '}
                   <a

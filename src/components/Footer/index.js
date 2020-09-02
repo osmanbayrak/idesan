@@ -30,8 +30,11 @@ const FooterComponent = () => (
             </span>
           </Col>
           <Col md={{ span: 6 }} xs={24}>
+            <span style={{ display: 'block' }}>
+              Tel: <a href="tel:+902322372341">0232 237 2341</a> /{' '}
+              <a href="tel:+90232 254 9535">0232 254 9535 </a>
+            </span>
             <span style={{ display: 'block' }}>Faks: 0232 254 1541</span>
-            <span style={{ display: 'block' }}>Tel: 0232 237 2341 / 0232 254 9535</span>
           </Col>
         </Col>
       </Row>

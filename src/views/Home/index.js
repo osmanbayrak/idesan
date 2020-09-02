@@ -6,11 +6,11 @@ import first from '../../assets/slayt1.jpg';
 import second from '../../assets/slayt2.jpg';
 import third from '../../assets/slayt3.jpg';
 import fourth from '../../assets/slayt4.jpg';
-import profillerPng from '../../assets/profillerPng.png';
+import profillerBorularPng from '../../assets/profillerBorularPng.png';
 import haddedemirlerPng from '../../assets/haddedemirlerPng.png';
 import saclarPng from '../../assets/saclarPng.png';
-import borularPng from '../../assets/borularPng.png';
-import ferforjelerPng from '../../assets/ferforjelerPng.png';
+import yardimcilarPng from '../../assets/yardimcilarPng.png';
+import yapiMalzPng from '../../assets/yapiMalzPng.png';
 import headerBg from '../../assets/bannerBgGray.png';
 import bayiler from '../../assets/bayiler.jpeg';
 import catimal from '../../assets/catimal.png';
@@ -76,7 +76,7 @@ class HomePage extends React.Component {
             <Divider orientation="center">
               <h1>ÜRÜNLER</h1>
             </Divider>
-            <Link to="/products/profiller">
+            <Link to="/products/profiller_borular">
               <Col {...topColResponsiveProps} style={{ cursor: 'pointer' }}>
                 <Card
                   style={{ backgroundImage: `url(${headerBg})` }}
@@ -85,7 +85,7 @@ class HomePage extends React.Component {
                   title={
                     <div
                       style={{
-                        fontSize: '18px',
+                        fontSize: '16px',
                         borderBottom: '1px solid white',
                         textAlign: 'center',
                         marginBottom: '10px',
@@ -105,42 +105,7 @@ class HomePage extends React.Component {
                         borderRadius: '7px',
                       }}
                     >
-                      <img className="rowImages" alt="example" src={profillerPng} />
-                    </span>
-                  }
-                />
-              </Col>
-            </Link>
-            <Link to="/products/haddedemirler">
-              <Col {...topColResponsiveProps} style={{ cursor: 'pointer' }}>
-                <Card
-                  bodyStyle={{ minHeight: '15px' }}
-                  className="productCards"
-                  style={{ backgroundImage: `url(${headerBg})` }}
-                  title={
-                    <div
-                      style={{
-                        fontSize: '18px',
-                        borderBottom: '1px solid white',
-                        textAlign: 'center',
-                        marginBottom: '10px',
-                        paddingBottom: '8px',
-                        color: 'aliceblue',
-                      }}
-                    >
-                      Hadde Demirler
-                    </div>
-                  }
-                  cover={
-                    <span
-                      style={{
-                        overflow: 'hidden',
-                        textAlign: 'center',
-                        border: '2px solid gray',
-                        borderRadius: '7px',
-                      }}
-                    >
-                      <img className="rowImages" alt="example" src={haddedemirlerPng} />
+                      <img className="rowImages" alt="example" src={profillerBorularPng} />
                     </span>
                   }
                 />
@@ -155,7 +120,7 @@ class HomePage extends React.Component {
                   title={
                     <div
                       style={{
-                        fontSize: '18px',
+                        fontSize: '16px',
                         borderBottom: '1px solid white',
                         textAlign: 'center',
                         marginBottom: '10px',
@@ -181,41 +146,6 @@ class HomePage extends React.Component {
                 />
               </Col>
             </Link>
-            <Link to="/products/borular">
-              <Col {...topColResponsiveProps} style={{ cursor: 'pointer' }}>
-                <Card
-                  bodyStyle={{ minHeight: '15px' }}
-                  className="productCards"
-                  style={{ borderRadius: '10px', backgroundImage: `url(${headerBg})` }}
-                  title={
-                    <div
-                      style={{
-                        fontSize: '18px',
-                        borderBottom: '1px solid white',
-                        textAlign: 'center',
-                        marginBottom: '10px',
-                        paddingBottom: '8px',
-                        color: 'aliceblue',
-                      }}
-                    >
-                      Borular
-                    </div>
-                  }
-                  cover={
-                    <span
-                      style={{
-                        overflow: 'hidden',
-                        textAlign: 'center',
-                        border: '2px solid gray',
-                        borderRadius: '7px',
-                      }}
-                    >
-                      <img className="rowImages" alt="example" src={borularPng} />
-                    </span>
-                  }
-                />
-              </Col>
-            </Link>
             <Link to="/products/cati">
               <Col {...topColResponsiveProps} style={{ cursor: 'pointer' }}>
                 <Card
@@ -225,7 +155,7 @@ class HomePage extends React.Component {
                   title={
                     <div
                       style={{
-                        fontSize: '18px',
+                        fontSize: '16px',
                         borderBottom: '1px solid white',
                         textAlign: 'center',
                         marginBottom: '10px',
@@ -251,16 +181,16 @@ class HomePage extends React.Component {
                 />
               </Col>
             </Link>
-            <Link to="/products/ferforje">
+            <Link to="/products/haddedemirler">
               <Col {...topColResponsiveProps} style={{ cursor: 'pointer' }}>
                 <Card
                   bodyStyle={{ minHeight: '15px' }}
                   className="productCards"
-                  style={{ borderRadius: '10px', backgroundImage: `url(${headerBg})` }}
+                  style={{ backgroundImage: `url(${headerBg})` }}
                   title={
                     <div
                       style={{
-                        fontSize: '18px',
+                        fontSize: '16px',
                         borderBottom: '1px solid white',
                         textAlign: 'center',
                         marginBottom: '10px',
@@ -268,7 +198,7 @@ class HomePage extends React.Component {
                         color: 'aliceblue',
                       }}
                     >
-                      Ferforje
+                      Haddelenmiş Demirler
                     </div>
                   }
                   cover={
@@ -280,7 +210,77 @@ class HomePage extends React.Component {
                         borderRadius: '7px',
                       }}
                     >
-                      <img className="rowImages" alt="example" src={ferforjelerPng} />
+                      <img className="rowImages" alt="example" src={haddedemirlerPng} />
+                    </span>
+                  }
+                />
+              </Col>
+            </Link>
+            <Link to="/products/yapimalz">
+              <Col {...topColResponsiveProps} style={{ cursor: 'pointer' }}>
+                <Card
+                  bodyStyle={{ minHeight: '15px' }}
+                  className="productCards"
+                  style={{ borderRadius: '10px', backgroundImage: `url(${headerBg})` }}
+                  title={
+                    <div
+                      style={{
+                        fontSize: '16px',
+                        borderBottom: '1px solid white',
+                        textAlign: 'center',
+                        marginBottom: '10px',
+                        paddingBottom: '8px',
+                        color: 'aliceblue',
+                      }}
+                    >
+                      Yapı Malzemeleri
+                    </div>
+                  }
+                  cover={
+                    <span
+                      style={{
+                        overflow: 'hidden',
+                        textAlign: 'center',
+                        border: '2px solid gray',
+                        borderRadius: '7px',
+                      }}
+                    >
+                      <img className="rowImages" alt="example" src={yapiMalzPng} />
+                    </span>
+                  }
+                />
+              </Col>
+            </Link>
+            <Link to="/products/yardimcilar">
+              <Col {...topColResponsiveProps} style={{ cursor: 'pointer' }}>
+                <Card
+                  bodyStyle={{ minHeight: '15px' }}
+                  className="productCards"
+                  style={{ borderRadius: '10px', backgroundImage: `url(${headerBg})` }}
+                  title={
+                    <div
+                      style={{
+                        fontSize: '16px',
+                        borderBottom: '1px solid white',
+                        textAlign: 'center',
+                        marginBottom: '10px',
+                        paddingBottom: '8px',
+                        color: 'aliceblue',
+                      }}
+                    >
+                      Yardımcı Ürünler
+                    </div>
+                  }
+                  cover={
+                    <span
+                      style={{
+                        overflow: 'hidden',
+                        textAlign: 'center',
+                        border: '2px solid gray',
+                        borderRadius: '7px',
+                      }}
+                    >
+                      <img className="rowImages" alt="example" src={yardimcilarPng} />
                     </span>
                   }
                 />

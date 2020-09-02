@@ -197,3 +197,92 @@ body {
 .daypickerwidth .DayPickerInput{
     width: 49%;
 }
+
+
+$slides: 4;
+$slide-width: 180px;
+$slide-height: 137px;
+$ang: 360 / $slides;
+$perspective: 700px;
+$bg: #000;
+$shadow: #fff;
+$spin-time: 20s;
+
+$y: ();
+@for $i from 0 through $slides {
+    $y: append($y, $i*$ang + deg);
+}
+
+@mixin animation($name) {
+    @-webkit-keyframes #{$name} {@content;}
+    @-moz-keyframes #{$name} {@content;}
+    @-o-keyframes #{$name} {@content;}
+    @keyframes #{$name} {@content;}
+}
+
+@mixin animation-use($name, $time) {
+    -webkit-animation: $name $time infinite linear;
+    -moz-animation: $name $time infinite linear;
+    -o-animation: $name $time infinite linear;
+    animation: $name $time infinite linear;
+}
+
+@mixin slidePos($y, $z) {
+    -webkit-transform: rotateY($y) translateZ($z);
+    -ms-transform: rotateY($y) translateZ($z);
+    transform: rotateY($y) translateZ($z);
+}
+
+@mixin rotate($x, $y) {
+    -webkit-transform: rotateX($x) rotateY($y);
+    -ms-transform: rotateX($x) rotateY($y);
+    transform: rotateX($x) rotateY($y);
+}
+
+@include animation(turn) {
+    50% {
+        @include rotate(5deg, .5turn);
+    }
+    100% {
+        @include rotate(-5deg, 1turn);
+    }
+}
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: $perspective;
+    -ms-perspective: $perspective;
+    perspective: $perspective;
+            
+    .carousel {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: $slide-width;
+        height: $slide-height;
+        margin-left: -$slide-width/2;
+        margin-top: -$slide-height/2;
+        transform-style: preserve-3d;
+        @include rotate(-5deg, 0);
+        @include animation-use(turn, $spin-time);
+                    
+        .slide {
+            position: absolute;
+            width: $slide-width;
+            height: $slide-height;
+            border-radius: 8px;
+            box-shadow: 0 0 4px 1px $shadow;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            
+            @for $i from 1 through $slides {
+                &:nth-child(#{$i}) {
+                    @include slidePos(nth($y, $i), .2*$slides*$slide-width);
+                }
+            }
+        }
+    }
+}

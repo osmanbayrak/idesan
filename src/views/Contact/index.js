@@ -29,7 +29,9 @@ class Contact extends React.Component {
             </Divider>
             <div style={{ color: 'black' }}>
               <p>Adres : 5733 sok. No:39 Karabağlar/İzmir</p>
-              <p>Telefon : 0232 237 2341</p>
+              <p>
+                Telefon : <a href="tel:+902322372341">0232 237 2341</a>
+              </p>
               <p>Faks : 0232 254 1541</p>
               <p>
                 Email :{' '}
@@ -64,7 +66,9 @@ class Contact extends React.Component {
             </Divider>
             <div style={{ color: 'black' }}>
               <p>Adres : 907 Sokak No:6 Gaziemir/İzmir</p>
-              <p>Telefon : 0532 630 6840</p>
+              <p>
+                Telefon : <a href="tel:+905413693877">0541 369 3877</a>
+              </p>
               <p>Faks : 0232 254 1541</p>
               <p>
                 Email :{' '}
