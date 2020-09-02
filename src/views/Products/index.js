@@ -175,16 +175,15 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 12, offset: 0 }} xs={{ span: 24, offset: 0 }}>
-                  <Carousel style={{ width: '310px', border: '1px solid lightgray' }} draggable>
-                    {products.profiller_borular.cards.map((v, i) => {
-                      return (
-                        <div>
-                          <img style={{ height: '270px', width: '310px' }} src={v.image} />
-                        </div>
-                      );
-                    })}
-                  </Carousel>
+                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                  <div class="container">
+                    <div class="carousel">
+                      <img class="slide" draggable="false" src={products.profiller_borular.cards[0].image}/>
+                      <img class="slide" draggable="false" src={products.profiller_borular.cards[1].image}/>
+                      <img class="slide" draggable="false" src={products.profiller_borular.cards[2].image}/>
+                      <img class="slide" draggable="false" src={products.profiller_borular.cards[3].image}/>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             </Tabs.TabPane>
@@ -208,7 +207,7 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 12, offset: 0 }} xs={{ span: 24, offset: 0 }}>
+                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
                   <div class="container">
                     <div class="carousel">
                       <img class="slide" draggable="false" src={products.saclar.cards[0].image}/>
@@ -278,16 +277,15 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 12, offset: 0 }} xs={{ span: 24, offset: 0 }}>
-                  <Carousel style={{ width: '310px', border: '1px solid lightgray' }} draggable>
-                    {products.hadde_demirler.cards.map((v, i) => {
-                      return (
-                        <div>
-                          <img style={{ height: '270px', width: '310px' }} src={v.image} />
-                        </div>
-                      );
-                    })}
-                  </Carousel>
+                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                  <div class="container">
+                    <div class="carousel">
+                      <img class="slide" draggable="false" src={products.hadde_demirler.cards[0].image}/>
+                      <img class="slide" draggable="false" src={products.hadde_demirler.cards[1].image}/>
+                      <img class="slide" draggable="false" src={products.hadde_demirler.cards[2].image}/>
+                      <img class="slide" draggable="false" src={products.hadde_demirler.cards[3].image}/>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             </Tabs.TabPane>
@@ -314,16 +312,15 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 12, offset: 0 }} xs={{ span: 24, offset: 0 }}>
-                  <Carousel style={{ width: '310px', border: '1px solid lightgray' }} draggable>
-                    {products.yapimalz.cards.map((v, i) => {
-                      return (
-                        <div>
-                          <img style={{ height: '270px', width: '310px' }} src={v.image} />
-                        </div>
-                      );
-                    })}
-                  </Carousel>
+                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                  <div class="container">
+                    <div class="carousel">
+                      <img class="slide" draggable="false" src={products.yapimalz.cards[0].image}/>
+                      <img class="slide" draggable="false" src={products.yapimalz.cards[1].image}/>
+                      <img class="slide" draggable="false" src={products.yapimalz.cards[2].image}/>
+                      <img class="slide" draggable="false" src={products.yapimalz.cards[3].image}/>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             </Tabs.TabPane>
@@ -351,15 +348,16 @@ class Products extends React.Component {
                   />
                 </Col>
                 <Col md={{ span: 12, offset: 0 }} xs={{ span: 24, offset: 0 }}>
-                  <Carousel style={{ width: '310px', border: '1px solid lightgray' }} draggable>
-                    {products.yardimcilar.cards.map((v, i) => {
-                      return (
-                        <div>
-                          <img style={{ height: '270px', width: '310px' }} src={v.image} />
-                        </div>
-                      );
-                    })}
-                  </Carousel>
+                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                  <div class="container">
+                    <div class="carousel">
+                      <img class="slide" draggable="false" src={products.yardimcilar.cards[0].image}/>
+                      <img class="slide" draggable="false" src={products.yardimcilar.cards[1].image}/>
+                      <img class="slide" draggable="false" src={products.yardimcilar.cards[2].image}/>
+                      <img class="slide" draggable="false" src={products.yardimcilar.cards[3].image}/>
+                    </div>
+                  </div>
+                </Col>
                 </Col>
               </Row>
             </Tabs.TabPane>
