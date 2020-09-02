@@ -176,7 +176,7 @@ class Products extends React.Component {
                   />
                 </Col>
                 <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
-                  <div class="container">
+                  <div class="carousel_container">
                     <div class="carousel">
                       <img class="slide" draggable="false" src={products.profiller_borular.cards[0].image}/>
                       <img class="slide" draggable="false" src={products.profiller_borular.cards[1].image}/>
@@ -208,7 +208,7 @@ class Products extends React.Component {
                   />
                 </Col>
                 <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
-                  <div class="container">
+                  <div class="carousel_container">
                     <div class="carousel">
                       <img class="slide" draggable="false" src={products.saclar.cards[0].image}/>
                       <img class="slide" draggable="false" src={products.saclar.cards[1].image}/>
@@ -243,7 +243,7 @@ class Products extends React.Component {
                   />
                 </Col>
                 <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
-                  <div class="container">
+                  <div class="carousel_container">
                     <div class="carousel">
                       <img class="slide" draggable="false" src={products.cati.cards[0].image}/>
                       <img class="slide" draggable="false" src={products.cati.cards[1].image}/>
@@ -278,7 +278,7 @@ class Products extends React.Component {
                   />
                 </Col>
                 <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
-                  <div class="container">
+                  <div class="carousel_container">
                     <div class="carousel">
                       <img class="slide" draggable="false" src={products.hadde_demirler.cards[0].image}/>
                       <img class="slide" draggable="false" src={products.hadde_demirler.cards[1].image}/>
@@ -313,7 +313,7 @@ class Products extends React.Component {
                   />
                 </Col>
                 <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
-                  <div class="container">
+                  <div class="carousel_container">
                     <div class="carousel">
                       <img class="slide" draggable="false" src={products.yapimalz.cards[0].image}/>
                       <img class="slide" draggable="false" src={products.yapimalz.cards[1].image}/>
@@ -349,7 +349,7 @@ class Products extends React.Component {
                 </Col>
                 <Col md={{ span: 12, offset: 0 }} xs={{ span: 24, offset: 0 }}>
                 <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
-                  <div class="container">
+                  <div class="carousel_container">
                     <div class="carousel">
                       <img class="slide" draggable="false" src={products.yardimcilar.cards[0].image}/>
                       <img class="slide" draggable="false" src={products.yardimcilar.cards[1].image}/>

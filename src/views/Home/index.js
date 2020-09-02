@@ -14,8 +14,97 @@ import yapiMalzPng from '../../assets/yapiMalzPng.png';
 import headerBg from '../../assets/bannerBgGray.png';
 import bayiler from '../../assets/bayiler.jpeg';
 import catimal from '../../assets/catimal.png';
+import MomentumSlider from 'momentum-slider';
 
 class HomePage extends React.Component {
+  componentDidMount() {
+
+    var slidersContainer = document.querySelector('.sliders-container');
+
+    // Initializing the numbers slider
+    var msNumbers = new MomentumSlider({
+        el: slidersContainer,
+        cssClass: 'ms--numbers',
+        range: [1, 3],
+        style: {
+            transform: [{scale: [0.4, 1]}],
+            opacity: [0, 1]
+        },
+        interactive: false
+    });
+
+    // Initializing the titles slider
+    var titles = [
+        'Gaziemir Depo',
+        'Gaziemir Ofis',
+        'Karabağlar Depo'
+    ];
+    var msTitles = new MomentumSlider({
+        el: slidersContainer,
+        cssClass: 'ms--titles',
+        range: [0, 2],
+        rangeContent: function (i) {
+            return '<h3>'+ titles[i] +'</h3>';
+        },
+        vertical: true,
+        reverse: true,
+        style: {
+            opacity: [0, 1]
+        },
+        interactive: false
+    });
+
+    // Initializing the links slider
+    var msLinks = new MomentumSlider({
+        el: slidersContainer,
+        cssClass: 'ms--links',
+        range: [0, 2],
+        vertical: true,
+        interactive: false
+    });
+
+    // Get pagination items
+    var pagination = document.querySelector('.pagination');
+    var paginationItems = [].slice.call(pagination.children);
+
+    // Initializing the images slider
+    var msImages = new MomentumSlider({
+        // Element to append the slider
+        el: slidersContainer,
+        // CSS class to reference the slider
+        cssClass: 'ms--images',
+        // Generate the 4 slides required
+        range: [0, 2],
+        rangeContent: function () {
+            return '<div class="ms-slide__image-container"><div class="ms-slide__image"></div></div>';
+        },
+        // Syncronize the other sliders
+        sync: [msNumbers, msTitles, msLinks],
+        // Styles to interpolate as we move the slider
+        style: {
+            '.ms-slide__image': {
+                transform: [{scale: [1.5, 1]}]
+            }
+        },
+        // Update pagination if slider change
+        change: function(newIndex, oldIndex) {
+            if (typeof oldIndex !== 'undefined') {
+                paginationItems[oldIndex].classList.remove('pagination__item--active');
+            }
+            paginationItems[newIndex].classList.add('pagination__item--active');
+        }
+    });
+
+    // Select corresponding slider item when a pagination button is clicked
+    pagination.addEventListener('click', function(e) {
+        if (e.target.matches('.pagination__button')) {
+            var index = paginationItems.indexOf(e.target.parentNode);
+            msImages.select(index);
+        }
+    });
+
+  }
+
   render() {
     const topColResponsiveProps = {
       xs: 24,
@@ -28,20 +117,13 @@ class HomePage extends React.Component {
     return (
       <div>
         <Col md={{ span: 20, offset: 2 }} xs={{ span: 24 }} className="carouselDiv">
-          <Carousel autoplay draggable={true}>
-            {/* <div>
-              <img className="carouselImg" style={{ height: 'auto', width: '100%' }} src={first} />
-            </div> */}
-            <div>
-              <img className="carouselImg" style={{ height: 'auto', width: '100%' }} src={second} />
-            </div>
-            {/* <div>
-              <img className="carouselImg" style={{ height: 'auto', width: '100%' }} src={third} />
-            </div> */}
-            <div>
-              <img className="carouselImg" style={{ height: 'auto', width: '100%' }} src={fourth} />
-            </div>
-          </Carousel>
+        <main class="sliders-container">
+          <ul class="pagination">
+              <li class="pagination__item"><a class="pagination__button"></a></li>
+              <li class="pagination__item"><a class="pagination__button"></a></li>
+              <li class="pagination__item"><a class="pagination__button"></a></li>
+          </ul>
+      </main>
         </Col>
         <Divider style={{ background: 'darkgray', height: '2px' }} />
         <Row className="titleRow">
