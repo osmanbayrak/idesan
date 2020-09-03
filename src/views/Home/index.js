@@ -1,7 +1,7 @@
 import './index.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Carousel, Card, Col, Row, Icon, Divider } from 'antd';
+import { Card, Col, Row, Divider } from 'antd';
 import first from '../../assets/slayt1.jpg';
 import second from '../../assets/slayt2.jpg';
 import third from '../../assets/slayt3.jpg';
@@ -12,97 +12,156 @@ import saclarPng from '../../assets/saclarPng.png';
 import yardimcilarPng from '../../assets/yardimcilarPng.png';
 import yapiMalzPng from '../../assets/yapiMalzPng.png';
 import headerBg from '../../assets/bannerBgGray.png';
-import bayiler from '../../assets/bayiler.jpeg';
 import catimal from '../../assets/catimal.png';
-import MomentumSlider from 'momentum-slider';
+import noksel from '../../assets/noksel3.jpg';
+import cayirova from '../../assets/cayirova.png';
+import oerlikon from '../../assets/oerlikon.png';
+import yücelboru from '../../assets/yücelboru2.jpg';
+import fatih from '../../assets/fatih.jpg';
+import $ from 'jquery';
 
 class HomePage extends React.Component {
+  state = {};
   componentDidMount() {
+    let activeIndex = 0;
+    let limit = 0;
+    let disabled = false;
+    let $stage;
+    let $controls;
 
-    var slidersContainer = document.querySelector('.sliders-container');
+    const SPIN_FORWARD_CLASS = 'js-spin-fwd';
+    const SPIN_BACKWARD_CLASS = 'js-spin-bwd';
+    const DISABLE_TRANSITIONS_CLASS = 'js-transitions-disabled';
+    const SPIN_DUR = 1000;
 
-    // Initializing the numbers slider
-    var msNumbers = new MomentumSlider({
-        el: slidersContainer,
-        cssClass: 'ms--numbers',
-        range: [1, 3],
-        style: {
-            transform: [{scale: [0.4, 1]}],
-            opacity: [0, 1]
+    const appendControls = () => {
+      for (let i = 0; i < limit; i++) {
+        $('.carousel__control').append(`<a href="#" data-index="${i}"></a>`);
+      }
+      let height = $('.carousel__control')
+        .children()
+        .last()
+        .outerHeight();
+
+      $('.carousel__control').css('height', 30 + limit * height);
+      $controls = $('.carousel__control').children();
+      $controls.eq(activeIndex).addClass('active');
+    };
+
+    const setIndexes = () => {
+      $('.spinner')
+        .children()
+        .each((i, el) => {
+          $(el).attr('data-index', i);
+          limit++;
+        });
+    };
+    const prepareDom = () => {
+      setIndexes();
+      appendControls();
+    };
+
+    const spin = (inc = 1) => {
+      if (disabled) return;
+      if (!inc) return;
+      activeIndex += inc;
+      disabled = true;
+
+      if (activeIndex >= limit) {
+        activeIndex = 0;
+      }
+
+      if (activeIndex < 0) {
+        activeIndex = limit - 1;
+      }
+
+      const $activeEls = $('.spinner__face.js-active');
+      const $nextEls = $(`.spinner__face[data-index=${activeIndex}]`);
+      $nextEls.addClass('js-next');
+
+      if (inc > 0) {
+        $stage.addClass(SPIN_FORWARD_CLASS);
+      } else {
+        $stage.addClass(SPIN_BACKWARD_CLASS);
+      }
+
+      $controls.removeClass('active');
+      $controls.eq(activeIndex).addClass('active');
+
+      setTimeout(
+        () => {
+          spinCallback(inc);
         },
-        interactive: false
+        SPIN_DUR,
+        inc,
+      );
+    };
+
+    const spinCallback = inc => {
+      $('.js-active').removeClass('js-active');
+      $('.js-next')
+        .removeClass('js-next')
+        .addClass('js-active');
+      $stage
+        .addClass(DISABLE_TRANSITIONS_CLASS)
+        .removeClass(SPIN_FORWARD_CLASS)
+        .removeClass(SPIN_BACKWARD_CLASS);
+
+      $('.js-active').each((i, el) => {
+        const $el = $(el);
+        $el.prependTo($el.parent());
+      });
+      setTimeout(() => {
+        $stage.removeClass(DISABLE_TRANSITIONS_CLASS);
+        disabled = false;
+      }, 100);
+    };
+
+    $('.carousel').on('click', e => {
+      e.preventDefault();
+      spin();
     });
 
-    // Initializing the titles slider
-    var titles = [
-        'Gaziemir Depo',
-        'Gaziemir Ofis',
-        'Karabağlar Depo'
-    ];
-    var msTitles = new MomentumSlider({
-        el: slidersContainer,
-        cssClass: 'ms--titles',
-        range: [0, 2],
-        rangeContent: function (i) {
-            return '<h3>'+ titles[i] +'</h3>';
-        },
-        vertical: true,
-        reverse: true,
-        style: {
-            opacity: [0, 1]
-        },
-        interactive: false
-    });
-
-    // Initializing the links slider
-    var msLinks = new MomentumSlider({
-        el: slidersContainer,
-        cssClass: 'ms--links',
-        range: [0, 2],
-        vertical: true,
-        interactive: false
-    });
-
-    // Get pagination items
-    var pagination = document.querySelector('.pagination');
-    var paginationItems = [].slice.call(pagination.children);
-
-    // Initializing the images slider
-    var msImages = new MomentumSlider({
-        // Element to append the slider
-        el: slidersContainer,
-        // CSS class to reference the slider
-        cssClass: 'ms--images',
-        // Generate the 4 slides required
-        range: [0, 2],
-        rangeContent: function () {
-            return '<div class="ms-slide__image-container"><div class="ms-slide__image"></div></div>';
-        },
-        // Syncronize the other sliders
-        sync: [msNumbers, msTitles, msLinks],
-        // Styles to interpolate as we move the slider
-        style: {
-            '.ms-slide__image': {
-                transform: [{scale: [1.5, 1]}]
-            }
-        },
-        // Update pagination if slider change
-        change: function(newIndex, oldIndex) {
-            if (typeof oldIndex !== 'undefined') {
-                paginationItems[oldIndex].classList.remove('pagination__item--active');
-            }
-            paginationItems[newIndex].classList.add('pagination__item--active');
+    const attachListeners = () => {
+      document.onkeyup = e => {
+        switch (e.keyCode) {
+          case 38:
+            spin(-1);
+            break;
+          case 40:
+            spin(1);
+            break;
         }
-    });
+      };
 
-    // Select corresponding slider item when a pagination button is clicked
-    pagination.addEventListener('click', function(e) {
-        if (e.target.matches('.pagination__button')) {
-            var index = paginationItems.indexOf(e.target.parentNode);
-            msImages.select(index);
-        }
-    });
+      $controls.on('click', e => {
+        e.preventDefault();
+        if (disabled) return;
+        const $el = $(e.target);
+        const toIndex = parseInt($el.attr('data-index'), 10);
+        spin(toIndex - activeIndex);
+      });
+    };
 
+    const assignEls = () => {
+      $stage = $('.carousel__stage');
+    };
+
+    const init = () => {
+      assignEls();
+      prepareDom();
+      attachListeners();
+    };
+
+    $(() => {
+      init();
+    });
+    let intervalId = setInterval(spin, 4500);
+    this.setState({ intervalId: intervalId });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalId);
   }
 
   render() {
@@ -117,13 +176,28 @@ class HomePage extends React.Component {
     return (
       <div>
         <Col md={{ span: 20, offset: 2 }} xs={{ span: 24 }} className="carouselDiv">
-        <main class="sliders-container">
-          <ul class="pagination">
-              <li class="pagination__item"><a class="pagination__button"></a></li>
-              <li class="pagination__item"><a class="pagination__button"></a></li>
-              <li class="pagination__item"><a class="pagination__button"></a></li>
-          </ul>
-      </main>
+          <div className="carousel">
+            <div className="carousel__control" />
+            <div className="carousel__stage">
+              <div className="spinner spinner--left">
+                <div className="spinner__face js-active" data-bg="#27323c">
+                  <div className="content" data-type="iceland">
+                    <img style={{ width: '100%' }} src={second} />
+                  </div>
+                </div>
+                <div className="spinner__face" data-bg="#19304a">
+                  <div className="content" data-type="china">
+                    <img style={{ width: '100%' }} src={fourth} />
+                  </div>
+                </div>
+                <div className="spinner__face" data-bg="#2b2533">
+                  <div className="content" data-type="usa">
+                    <img style={{ width: '100%' }} src={third} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </Col>
         <Divider style={{ background: 'darkgray', height: '2px' }} />
         <Row className="titleRow">
@@ -368,6 +442,65 @@ class HomePage extends React.Component {
                 />
               </Col>
             </Link>
+          </Col>
+        </Row>
+        <Divider style={{ background: 'darkgray', height: '2px' }} />
+        <Row gutter={12} style={{ marginRight: '0px' }}>
+          <Col
+            className="contentBlock"
+            style={{ background: 'white', marginBottom: '30px', paddingBottom: '5px' }}
+            md={{ offset: 2, span: 20 }}
+            xs={{ offset: 2, span: 20 }}
+          >
+            <Divider style={{ margin: '2px 0' }} orientation="left">
+              <h4>Bayisi Olduğumuz Bazı Firmalar...</h4>
+            </Divider>
+            <div class="slider">
+              <div class="slide-track">
+                <div class="slide">
+                  <img src={yücelboru} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={noksel} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={fatih} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={cayirova} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={oerlikon} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={yücelboru} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={noksel} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={fatih} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={cayirova} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={oerlikon} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={yücelboru} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={noksel} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={fatih} height="100" width="250" alt="" />
+                </div>
+                <div class="slide">
+                  <img src={cayirova} height="100" width="250" alt="" />
+                </div>
+              </div>
+            </div>
           </Col>
         </Row>
       </div>

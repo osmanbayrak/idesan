@@ -92,7 +92,7 @@ class HeaderComponent extends React.Component {
                 <span className="span2">
                   <a href="tel:+902322549535">0232 254 9535</a>
                 </span>
-                <span style={{ display: 'block' }}>
+                <span className="span3">
                   <b>Email:</b>{' '}
                   <a
                     onClick={() => {

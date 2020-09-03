@@ -25,6 +25,7 @@
     "i18next": "11.5.0",
     "i18next-browser-languagedetector": "2.2.2",
     "i18next-xhr-backend": "1.5.1",
+    "jquery": "^3.5.1",
     "moment": "2.22.2",
     "momentum-slider": "0.0.8",
     "prop-types": "15.6.2",

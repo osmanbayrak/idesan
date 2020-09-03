@@ -1,11 +1,9 @@
 import React from 'react';
 import { generatePath } from 'react-router';
-import { Card, Col, Row, Tabs, Divider, Carousel, List } from 'antd';
+import { Col, Row, Tabs, Divider, List } from 'antd';
 import { CaretRightFilled } from '@ant-design/icons';
-import headerBg from '../../assets/bannerBgGray.png';
 import productsBannerImg from '../../assets/productBanner.jpg';
 import dkp from '../../assets/profiller/dkp.png';
-import op from '../../assets/profiller/op.png';
 import ep from '../../assets/profiller/ep.png';
 import gp from '../../assets/profiller/gp.png';
 import ip from '../../assets/profiller/ip.png';
@@ -20,7 +18,6 @@ import baklavasac from '../../assets/saclar/baklavasac.png';
 import kbent from '../../assets/haddeler/kbent.png';
 import lama from '../../assets/haddeler/lama.png';
 import npu from '../../assets/haddeler/npu.png';
-import npi from '../../assets/haddeler/npi.png';
 import cati from '../../assets/catimal.png';
 import kilitler from '../../assets/under_constraction.png';
 import menteşeler from '../../assets/under_constraction.png';
@@ -175,13 +172,33 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                <Col
+                  md={{ span: 9, offset: 0 }}
+                  style={{ top: '20vh' }}
+                  xs={{ span: 24, offset: 0 }}
+                >
                   <div class="carousel_container">
                     <div class="carousel">
-                      <img class="slide" draggable="false" src={products.profiller_borular.cards[0].image}/>
-                      <img class="slide" draggable="false" src={products.profiller_borular.cards[1].image}/>
-                      <img class="slide" draggable="false" src={products.profiller_borular.cards[2].image}/>
-                      <img class="slide" draggable="false" src={products.profiller_borular.cards[3].image}/>
+                      <img
+                        class="slide"
+                        draggable="false"
+                        src={products.profiller_borular.cards[0].image}
+                      />
+                      <img
+                        class="slide"
+                        draggable="false"
+                        src={products.profiller_borular.cards[1].image}
+                      />
+                      <img
+                        class="slide"
+                        draggable="false"
+                        src={products.profiller_borular.cards[2].image}
+                      />
+                      <img
+                        class="slide"
+                        draggable="false"
+                        src={products.profiller_borular.cards[3].image}
+                      />
                     </div>
                   </div>
                 </Col>
@@ -207,13 +224,17 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                <Col
+                  md={{ span: 9, offset: 0 }}
+                  style={{ top: '20vh' }}
+                  xs={{ span: 24, offset: 0 }}
+                >
                   <div class="carousel_container">
                     <div class="carousel">
-                      <img class="slide" draggable="false" src={products.saclar.cards[0].image}/>
-                      <img class="slide" draggable="false" src={products.saclar.cards[1].image}/>
-                      <img class="slide" draggable="false" src={products.saclar.cards[2].image}/>
-                      <img class="slide" draggable="false" src={products.saclar.cards[3].image}/>
+                      <img class="slide" draggable="false" src={products.saclar.cards[0].image} />
+                      <img class="slide" draggable="false" src={products.saclar.cards[1].image} />
+                      <img class="slide" draggable="false" src={products.saclar.cards[2].image} />
+                      <img class="slide" draggable="false" src={products.saclar.cards[3].image} />
                     </div>
                   </div>
                 </Col>
@@ -242,13 +263,17 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                <Col
+                  md={{ span: 9, offset: 0 }}
+                  style={{ top: '20vh' }}
+                  xs={{ span: 24, offset: 0 }}
+                >
                   <div class="carousel_container">
                     <div class="carousel">
-                      <img class="slide" draggable="false" src={products.cati.cards[0].image}/>
-                      <img class="slide" draggable="false" src={products.cati.cards[1].image}/>
-                      <img class="slide" draggable="false" src={products.cati.cards[2].image}/>
-                      <img class="slide" draggable="false" src={products.cati.cards[3].image}/>
+                      <img class="slide" draggable="false" src={products.cati.cards[0].image} />
+                      <img class="slide" draggable="false" src={products.cati.cards[1].image} />
+                      <img class="slide" draggable="false" src={products.cati.cards[2].image} />
+                      <img class="slide" draggable="false" src={products.cati.cards[3].image} />
                     </div>
                   </div>
                 </Col>
@@ -277,13 +302,33 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                <Col
+                  md={{ span: 9, offset: 0 }}
+                  style={{ top: '20vh' }}
+                  xs={{ span: 24, offset: 0 }}
+                >
                   <div class="carousel_container">
                     <div class="carousel">
-                      <img class="slide" draggable="false" src={products.hadde_demirler.cards[0].image}/>
-                      <img class="slide" draggable="false" src={products.hadde_demirler.cards[1].image}/>
-                      <img class="slide" draggable="false" src={products.hadde_demirler.cards[2].image}/>
-                      <img class="slide" draggable="false" src={products.hadde_demirler.cards[3].image}/>
+                      <img
+                        class="slide"
+                        draggable="false"
+                        src={products.hadde_demirler.cards[0].image}
+                      />
+                      <img
+                        class="slide"
+                        draggable="false"
+                        src={products.hadde_demirler.cards[1].image}
+                      />
+                      <img
+                        class="slide"
+                        draggable="false"
+                        src={products.hadde_demirler.cards[2].image}
+                      />
+                      <img
+                        class="slide"
+                        draggable="false"
+                        src={products.hadde_demirler.cards[3].image}
+                      />
                     </div>
                   </div>
                 </Col>
@@ -312,13 +357,17 @@ class Products extends React.Component {
                     )}
                   />
                 </Col>
-                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
+                <Col
+                  md={{ span: 9, offset: 0 }}
+                  style={{ top: '20vh' }}
+                  xs={{ span: 24, offset: 0 }}
+                >
                   <div class="carousel_container">
                     <div class="carousel">
-                      <img class="slide" draggable="false" src={products.yapimalz.cards[0].image}/>
-                      <img class="slide" draggable="false" src={products.yapimalz.cards[1].image}/>
-                      <img class="slide" draggable="false" src={products.yapimalz.cards[2].image}/>
-                      <img class="slide" draggable="false" src={products.yapimalz.cards[3].image}/>
+                      <img class="slide" draggable="false" src={products.yapimalz.cards[0].image} />
+                      <img class="slide" draggable="false" src={products.yapimalz.cards[1].image} />
+                      <img class="slide" draggable="false" src={products.yapimalz.cards[2].image} />
+                      <img class="slide" draggable="false" src={products.yapimalz.cards[3].image} />
                     </div>
                   </div>
                 </Col>
@@ -348,16 +397,36 @@ class Products extends React.Component {
                   />
                 </Col>
                 <Col md={{ span: 12, offset: 0 }} xs={{ span: 24, offset: 0 }}>
-                <Col md={{ span: 9, offset: 0 }} style={{top: '20vh'}} xs={{ span: 24, offset: 0 }}>
-                  <div class="carousel_container">
-                    <div class="carousel">
-                      <img class="slide" draggable="false" src={products.yardimcilar.cards[0].image}/>
-                      <img class="slide" draggable="false" src={products.yardimcilar.cards[1].image}/>
-                      <img class="slide" draggable="false" src={products.yardimcilar.cards[2].image}/>
-                      <img class="slide" draggable="false" src={products.yardimcilar.cards[3].image}/>
+                  <Col
+                    md={{ span: 9, offset: 0 }}
+                    style={{ top: '20vh' }}
+                    xs={{ span: 24, offset: 0 }}
+                  >
+                    <div class="carousel_container">
+                      <div class="carousel">
+                        <img
+                          class="slide"
+                          draggable="false"
+                          src={products.yardimcilar.cards[0].image}
+                        />
+                        <img
+                          class="slide"
+                          draggable="false"
+                          src={products.yardimcilar.cards[1].image}
+                        />
+                        <img
+                          class="slide"
+                          draggable="false"
+                          src={products.yardimcilar.cards[2].image}
+                        />
+                        <img
+                          class="slide"
+                          draggable="false"
+                          src={products.yardimcilar.cards[3].image}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </Col>
+                  </Col>
                 </Col>
               </Row>
             </Tabs.TabPane>

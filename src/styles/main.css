@@ -52,13 +52,14 @@ body {
     .mainSpan {
       float: right;
       font-size: 9px;
-      margin-top: -50px; } }
+      margin-top: -58px; } }
 
 .pClass {
   margin-bottom: 0;
   line-height: 17px; }
   @media only screen and (max-width: 700px) {
     .pClass {
+      width: 317px;
       line-height: 12px; } }
 
 .span1 {
@@ -67,15 +68,22 @@ body {
   @media only screen and (max-width: 700px) {
     .span1 {
       margin-left: 11px;
-      display: block; } }
+      display: inline; } }
 
 .span2 {
   margin-left: 41px;
   display: block; }
   @media only screen and (max-width: 700px) {
     .span2 {
-      margin-left: 26px;
-      display: block; } }
+      margin-left: 16px;
+      display: inline; } }
+
+.span3 {
+  display: block; }
+  @media only screen and (max-width: 700px) {
+    .span3 {
+      margin-left: 10px;
+      display: inline; } }
 
 .contactLittleImg {
   width: auto;
