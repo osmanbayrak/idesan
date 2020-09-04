@@ -4844,13 +4844,26 @@ a.ant-btn-sm {
   .ant-back-top {
     right: 60px;
   }
+  .ant-menu-horizontal > .ant-menu-submenu {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    vertical-align: bottom;
+    border-bottom: 0.16em solid #D62829;
+  }
 }
 @media screen and (max-width: 480px) {
   .ant-back-top {
     right: 20px;
   }
+  .ant-menu-horizontal > .ant-menu-submenu {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    vertical-align: bottom;
+    border-bottom: 0.16em solid #D62829;
+  }
 }
-
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable */
@@ -14753,6 +14766,13 @@ form .ant-input-group-wrapper {
   }
 }
 @media (max-width: 767px) {
+  .ant-menu-horizontal > .ant-menu-submenu {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    vertical-align: bottom;
+    border-bottom: 0.16em solid #D62829;
+  }
   .ant-col-sm-24.ant-form-item-label {
     display: block;
     margin: 0;
@@ -17148,7 +17168,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   top: 1px;
   display: inline-block;
   vertical-align: bottom;
-  border-bottom: 2px solid transparent;
+  border-bottom: 0.16em solid #D62829;
 }
 .ant-menu-horizontal > .ant-menu-item:hover,
 .ant-menu-horizontal > .ant-menu-submenu:hover,
@@ -17159,7 +17179,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 .ant-menu-horizontal > .ant-menu-item-selected,
 .ant-menu-horizontal > .ant-menu-submenu-selected {
   color: #1890ff;
-  border-bottom: 2px solid #D62829;
+  border-bottom: 0.16em solid #D62829;
 }
 .ant-menu-horizontal > .ant-menu-item > a {
   display: block;

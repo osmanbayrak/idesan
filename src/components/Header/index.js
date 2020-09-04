@@ -61,7 +61,12 @@ class HeaderComponent extends React.Component {
                 src={logo}
               />
             </Col>
-            <Col md={12} xs={18} className="menuDiv" style={{ background: 'transparent' }}>
+            <Col
+              md={12}
+              xs={18}
+              className="menuDiv"
+              style={{ background: 'transparent', width: 'auto' }}
+            >
               <Menu
                 mode="horizontal"
                 selectedKeys={[paths.includes(currentPath) ? currentPath : '/home']}
